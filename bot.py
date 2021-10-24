@@ -64,17 +64,29 @@ async def on_message(message):
 
     elif message.content == "!gplayed":
         await message.channel.send(str(m[str(message.author.id)]['xp']) + 'games')
-        
-async win_loss_ratio(message): #I'm tryimng to do the win/loss ratio im sorry im so bad pls dont make fun of me i am trying
+
+    elif message.content == "!gstreak": #number of games won/lost in a streak
+
+
+
+    
+
+@client.event        
+async def win_loss_ratio(W,L): #I'm tryimng to do the win/loss ratio im sorry im so bad pls dont make fun of me i am trying
     countW = 0
     countL = 0
-    input('How was your name? Enter W or L: ')
-    if W:
+
+    input('How was your game? Enter W or L: ')
+    if input(W):
         countW += 1
-    else:
-        countL +=1
-        return ('Wins: ' countW, 'Losses: ' countL)
-    
+    elif input(L):
+        countL += 1
+        return (countW,countL)
+    elif countL % 3 == 0:
+        print ("Hey, why not take a break? We noticed you lost a couple of games, but it's not the end of the world. You wouldn't like it if other players took their frustration out on you, so don't take it out on them. Come and relax for a bit.")
+        return
+         
+
 @client.event
 async def on_message(message):
     username = str(message.author).split('#')[0]
