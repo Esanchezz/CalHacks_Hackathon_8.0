@@ -64,9 +64,17 @@ async def on_message(message):
 
     elif message.content == "!gplayed":
         await message.channel.send(str(m[str(message.author.id)]['xp']) + 'games')
-
+        
+async win_loss_ratio(message): #I'm tryimng to do the win/loss ratio im sorry im so bad pls dont make fun of me i am trying
+    countW = 0
+    countL = 0
+    input('How was your name? Enter W or L: ')
+    if W:
+        countW += 1
+    else:
+        countL +=1
+        return ('Wins: ' countW, 'Losses: ' countL)
     
-
 @client.event
 async def on_message(message):
     username = str(message.author).split('#')[0]
